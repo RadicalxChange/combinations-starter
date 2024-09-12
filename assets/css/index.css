@@ -29,6 +29,179 @@ production stylesheet in assets/built/screen.css using: npm run dev
 @tailwind components;
 @tailwind utilities;
 
+
+/* Fonts
+/* ---------------------------------------------------------- */
+
+@font-face {
+    font-family: "Messer";
+    src: url("../fonts/hinted-messerv20-condensed.woff2") format("woff2"),
+      url("../fonts/hinted-messerv20-condensed.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Suisse Intl";
+    src: url("../fonts/hinted-suisseintl-bold.woff2") format("woff2"),
+      url("../fonts/hinted-suisseintl-bold.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Suisse Intl";
+    src: url("../fonts/hinted-suisseintl-black.woff2") format("woff2"),
+      url("../fonts/hinted-suisseintl-black.woff") format("woff");
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Suisse Intl";
+    src: url("../fonts/hinted-suisseintl-blackitalic.woff2") format("woff2"),
+      url("../fonts/hinted-suisseintl-blackitalic.woff") format("woff");
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Suisse Intl";
+    src: url("../fonts/hinted-suisseintl-bolditalic.woff2") format("woff2"),
+      url("../fonts/hinted-suisseintl-bolditalic.woff") format("woff");
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Suisse Intl Book";
+    src: url("../fonts/hinted-suisseintl-book.woff2") format("woff2"),
+      url("../fonts/hinted-suisseintl-book.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Suisse Intl Book";
+    src: url("../fonts/hinted-suisseintl-bookitalic.woff2") format("woff2"),
+      url("../fonts/hinted-suisseintl-bookitalic.woff") format("woff");
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Suisse Intl";
+    src: url("../fonts/hinted-suisseintl-medium.woff2") format("woff2"),
+      url("../fonts/hinted-suisseintl-medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Suisse Intl";
+    src: url("../fonts/hinted-suisseintl-lightitalic.woff2") format("woff2"),
+      url("../fonts/hinted-suisseintl-lightitalic.woff") format("woff");
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Suisse Intl";
+    src: url("../fonts/hinted-suisseintl-light.woff2") format("woff2"),
+      url("../fonts/hinted-suisseintl-light.woff") format("woff");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Suisse Intl";
+    src: url("../fonts/hinted-suisseintl-mediumitalic.woff2") format("woff2"),
+      url("../fonts/hinted-suisseintl-mediumitalic.woff") format("woff");
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Suisse Intl";
+    src: url("../fonts/hinted-suisseintl-italic.woff2") format("woff2"),
+      url("../fonts/hinted-suisseintl-italic.woff") format("woff");
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Suisse Intl";
+    src: url("../fonts/hinted-suisseintl-regular.woff2") format("woff2"),
+      url("../fonts/hinted-suisseintl-regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Suisse Intl Semi";
+    src: url("../fonts/hinted-suisseintl-semiboldItalic.woff2") format("woff2"),
+      url("../fonts/hinted-suisseintl-semiboldItalic.woff") format("woff");
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Suisse Intl";
+    src: url("../fonts/hinted-suisseintl-thin.woff2") format("woff2"),
+      url("../fonts/hinted-suisseintl-thin.woff") format("woff");
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Suisse Intl Semi";
+    src: url("../fonts/hinted-suisseintl-semibold.woff2") format("woff2"),
+      url("../fonts/hinted-suisseintl-semibold.woff") format("woff");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Suisse Intl";
+    src: url("../fonts/hinted-suisseintl-thinitalic.woff2") format("woff2"),
+      url("../fonts/hinted-suisseintl-thinitalic.woff") format("woff");
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Suisse Intl";
+    src: url("../fonts/hinted-suisseintl-ultralight.woff2") format("woff2"),
+      url("../fonts/hinted-suisseintl-ultralight.woff") format("woff");
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Suisse Intl";
+    src: url("../fonts/hinted-suisseintl-ultralightitalic.woff2") format("woff2"),
+      url("../fonts/hinted-suisseintl-ultralightitalic.woff") format("woff");
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+  }
+
 /* Main - Your styles here! Edit below
 /* ---------------------------------------------------------- */
 
@@ -37,7 +210,7 @@ html,
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background: #ffffff;
+    background: #fff8dc;
 }
 
 .gh-main {
@@ -51,7 +224,14 @@ html,
 }
 
 .gh-article {
-    padding: 8vmin 0;
+    padding: 8vmin 3vmin;
+}
+
+.gh-title {
+    font-family: var(--font-display);
+    font-size: 12vw;
+    text-align: left;
+    margin-bottom: 4vmin;
 }
 
 .gh-postfeed {
@@ -63,6 +243,35 @@ html,
 
 .gh-postfeed > *:first-child {
     grid-column: 1 / -1;
+}
+
+@media (min-width: 768px) {
+
+    .gh-postfeed > *:first-child {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .gh-postfeed > *:first-child .gh-card-content {
+        grid-column-start: 1;
+        grid-row-start: 1;
+    }
+    
+    .gh-postfeed > *:first-child .gh-card-content .gh-card-title {
+        font-size: 9vw !important;
+    }
+    
+    .gh-postfeed > *:first-child > .gh-card-link {
+        grid-column-start: 2;
+        margin: auto;
+        padding: auto;
+    }
+
+    .gh-postfeed > *:first-child .gh-card-content,
+    .gh-postfeed > *:first-child .gh-card-picture {
+        margin: 0;
+        padding: 0;
+    }
 }
 
 .gh-container {
@@ -98,6 +307,11 @@ html,
     margin: 8vmin auto 0;
 } */
 
+.gh-card-title {
+    font-family: var(--font-display);
+    font-size: 3rem;
+}
+
 .gh-card-link {
     display: flex;
     flex-direction: column;
@@ -129,7 +343,7 @@ html,
 .gh-card-content {
     max-width: 720px;
     margin: 0 auto;
-    text-align: center;
+    text-align: left;
     font-size: 1.6rem;
 }
 
@@ -181,7 +395,23 @@ html,
 
 .gh-header {
     padding: 0 0 8vmin 0;
-    text-align: center;
+    text-align: left;
+}
+
+@media (min-width: 768px) {
+    .gh-header {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .gh-header > * {
+        flex: 1 1 50%; /* Make each child element take up 50% of the width */
+        box-sizing: border-box; /* Ensure padding and border are included in the width and height calculations */
+    }
+
+    .gh-image {
+        grid-column: wide;
+        margin-top: 0px !important;
+    }
 }
 
 .gh-post-meta {
@@ -190,11 +420,19 @@ html,
     font-size: 1.4rem;
     letter-spacing: 0.5px;
     text-transform: uppercase;
-    opacity: 0.8;
+    opacity: 1;
+    text-align: center;
 }
 
 .gh-excerpt {
-    margin: 1rem 0 0 0;
+    margin: 1rem 0 4rem 0;
+    font-size: 1.75rem;
+}
+
+@media (min-width: 768px) {
+    .gh-excerpt {
+        max-width: 35vw;
+    }
 }
 
 .gh-feature-image {

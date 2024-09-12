@@ -34,11 +34,9 @@
             </a>
         </div>
         <div class="gh-head-menu">
-            {{navigation}}
-        </div>
-        <div class="gh-head-actions">
-            <div class="gh-head-actions-list">
+            <div class="xl:space-x-16 xl:mr-8">
                 {{search}}
+                {{navigation}}
                 {{#if @site.members_enabled}}
                     {{^if @member}}
                     <a class="gh-button" href="{{@site.signup_url}}">Subscribe</a>
@@ -46,6 +44,9 @@
                     <a class="gh-button" href="#/portal/account">Account</a>
                     {{/if}}
                 {{/if}}
+            </div>
+            <div class="gh-head-meta">
+                <span>Published by RadicalxChange Foundation</span>
             </div>
         </div>
     </nav>

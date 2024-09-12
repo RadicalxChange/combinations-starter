@@ -5,18 +5,6 @@
 
 .gh-canvas,
 .kg-width-full.kg-content-wide {
-    --gap: 4vw;
-    --main: min(var(--content-width, 720px), 100% - var(--gap) * 2);
-    --wide: minmax(0, calc((var(--container-width, 1200px) - var(--content-width, 720px)) / 2));
-    --full: minmax(var(--gap), 1fr);
-
-    display: grid;
-    grid-template-columns:
-        [full-start] var(--full)
-        [wide-start] var(--wide)
-        [main-start] var(--main) [main-end]
-        var(--wide) [wide-end]
-        var(--full) [full-end];
 }
 
 .gh-canvas > * {
@@ -40,6 +28,20 @@
 /* Content & Typography
 /* ---------------------------------------------------------- */
 
+.gh-content {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    max-width: 650px !important;
+}
+
+@media (min-width: 768px) {
+    .gh-content {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 650px !important;
+    }
+}
+
 .gh-content > * + * {
     margin-top: 4vmin;
 }
@@ -62,7 +64,7 @@
 .gh-canvas > ul,
 .gh-canvas > dl,
 .gh-canvas > p {
-    font-family: var(--font-serif);
+    font-family: var(--font-body);
     font-weight: 400;
     font-size: 2rem;
     line-height: 1.6em;

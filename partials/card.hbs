@@ -48,10 +48,16 @@ Re-usable card for linking to posts
             </picture>
         {{/if}}
         <div class="gh-card-content">
-            <span class="gh-card-meta"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time> <span class="bull">&bull;</span> {{reading_time}}</span>
             <h2 class="gh-card-title">{{title}}</h2>
-            <p>{{excerpt}}</p>
-            <strong>Read more</strong>
+            {{!-- <p>{{excerpt}}</p> --}}
+            {{!-- <span class="gh-card-meta"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time> <span class="bull">&bull;</span> {{reading_time}}</span> --}}
+
+            <div class="gh-post-authors flex flex-row space-x-2 mt-4">
+                by
+                {{#foreach authors}}
+                  <a href="{{url}}">{{name}}</a>{{#if @last}}{{else}},{{/if}}
+                {{/foreach}}
+            </div>
         </div>
     </a>
 </article>
