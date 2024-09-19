@@ -6,15 +6,19 @@
 
     <header class="gh-header gh-canvas">
 
-        <div class="max-w-5xl mx-auto">
-            <h1 class="gh-title text-size-lg/display">{{title}}</h1>
+        <div class="grid grid-cols-2 gap-10 text-left max-w-7xl mx-auto">
+            <div>
+                <h1 class="gh-title text-size-display">{{title}}</h1>
 
-            {{#if custom_excerpt}}
-            <p class="gh-excerpt">{{custom_excerpt}}</p>
-            {{/if}}
+                {{#if custom_excerpt}}
+                <p class="gh-excerpt">{{custom_excerpt}}</p>
+                {{/if}}
+
+                <span class="gh-post-meta"><time datetime="{{date format="MMMM Do, YYYY"}}">{{date format="MMMM Do, YYYY"}}</time></span>
+            </div>
 
             {{#if feature_image}}
-            <figure class="gh-feature-image mt-8">
+            <figure class="gh-feature-image col-start-2 row-start-1 mt-0">
                 <picture>
                 <source 
                     srcset="
@@ -57,23 +61,9 @@
             </figure>
             {{/if}}
         </div>
-
-        <div class="my-24 py-8 border-black border-t border-b">
-            <div class="flex justify-between max-w-5xl mx-auto">
-                <span class="gh-post-meta"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time> <span class="bull">&bull;</span> {{reading_time}}</span>
-                <button type="button">Share</button>
-            </div>
-        </div>
-        
-        <div class="inline-grid grid-cols-1 items-start w-auto">
-            <div class="gh-post-authors uppercase mb-8">
-                By {{#foreach authors}}<a href="{{url}}">{{name}}</a>{{/foreach}}
-            </div>
-            <img class="block w-full h-auto" src="{{asset "images/author-line.png"}}" />
-        </div>
     </header>
 
-    <div class="gh-content gh-canvas prose">
+    <div class="gh-content gh-canvas podcast-content prose">
         {{content}}
     </div>
 

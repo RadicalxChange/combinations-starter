@@ -229,9 +229,8 @@ html,
 
 .gh-title {
     font-family: var(--font-display);
-    font-size: 12vw;
-    text-align: left;
     margin-bottom: 4vmin;
+    text-transform: uppercase;
 }
 
 .gh-postfeed {
@@ -247,7 +246,7 @@ html,
 
 @media (min-width: 768px) {
 
-    .gh-postfeed > *:first-child {
+    .gh-postfeed > :first-child > * {
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
@@ -267,10 +266,15 @@ html,
         padding: auto;
     }
 
-    .gh-postfeed > *:first-child .gh-card-content,
     .gh-postfeed > *:first-child .gh-card-picture {
-        margin: 0;
-        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;  
+    }
+
+    .gh-postfeed > *:first-child .gh-card-image {
+        object-fit: contain !important;
+        margin: 0 !important;
     }
 }
 
@@ -332,7 +336,7 @@ html,
 
 .gh-card-meta {
     display: block;
-    margin: 0 0 1rem;
+    margin: 1rem 0;
     font-size: 1.4rem;
     line-height: 1.2em;
     letter-spacing: 0.5px;
@@ -342,14 +346,12 @@ html,
 
 .gh-card-content {
     max-width: 720px;
-    margin: 0 auto;
     text-align: left;
     font-size: 1.6rem;
 }
 
 .gh-card-content p {
     margin: 1.2rem 0;
-    padding: 0 3vmin;
 }
 
 .gh-card-content > strong {
@@ -395,50 +397,25 @@ html,
 
 .gh-header {
     padding: 0 0 8vmin 0;
-    text-align: left;
-}
-
-@media (min-width: 768px) {
-    .gh-header {
-        display: flex;
-        flex-wrap: wrap;
-    }
-    .gh-header > * {
-        flex: 1 1 50%; /* Make each child element take up 50% of the width */
-        box-sizing: border-box; /* Ensure padding and border are included in the width and height calculations */
-    }
-
-    .gh-image {
-        grid-column: wide;
-        margin-top: 0px !important;
-    }
+    text-align: center;
 }
 
 .gh-post-meta {
     display: block;
-    margin: 0 0 1rem;
     font-size: 1.4rem;
     letter-spacing: 0.5px;
     text-transform: uppercase;
     opacity: 1;
-    text-align: center;
 }
 
 .gh-excerpt {
-    margin: 1rem 0 4rem 0;
+    margin: 1rem auto 4rem auto;
     font-size: 1.75rem;
-}
-
-@media (min-width: 768px) {
-    .gh-excerpt {
-        max-width: 35vw;
-    }
+    max-width: 500px;
 }
 
 .gh-feature-image {
-    grid-column: wide-start / wide-end;
     width: 100%;
-    margin: 8vmin 0 0;
 }
 
 .gh-feature-image img {
@@ -448,6 +425,13 @@ html,
 
 .gh-post-footer {
     margin: 2rem 0;
+}
+
+.podcast-content h2 {
+  font-family: var(--font-display);
+  font-weight: normal;
+  text-transform: uppercase;
+  font-size: 4em;
 }
 
 
