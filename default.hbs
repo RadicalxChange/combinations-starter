@@ -5,6 +5,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{asset "built/index.css"}}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tienne:wght@400;700;900&display=swap" rel="stylesheet">
     <script src="{{asset "built/index.js"}}" defer></script>
 
     <title>{{meta_title}}</title>
@@ -52,6 +55,10 @@
     </nav>
 </header>
 
+<a class="bg-black w-full text-center py-4" href="/">
+    <span class="font-display text-size-2 uppercase text-white">Combinations Issue I will be out in November. Pre-order here.</span>
+</a>
+
 <main class="gh-main">
 
     {{{body}}}
@@ -62,10 +69,18 @@
 <footer class="gh-foot">
     <div class="gh-container">
         <div class="gh-foot-menu">
-            {{navigation type="secondary"}}
+            <a class="gh-head-logo foot-logo" href="{{@site.url}}">
+                {{#if @site.logo}}
+                    <img src="{{@site.logo}}" alt="{{@site.title}}" />
+                {{else}}
+                    {{@site.title}}
+                {{/if}}
+            </a>
         </div>
-        <div class="gh-foot-meta">
-            Published with <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
+        <div class="gh-head-menu">
+            <div class="xl:space-x-16 xl:mr-8">
+                {{navigation}}
+            </div>
         </div>
     </div>
 </footer>

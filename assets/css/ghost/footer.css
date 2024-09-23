@@ -2,14 +2,23 @@
 /* ---------------------------------------------------------- */
 
 .gh-foot {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 8vmin 4vmin 4vmin;
+    padding: 3vmin;
 }
 
 .gh-foot .gh-container {
+    display: flex;
+    justify-content: space-between;
     width: auto;
+}
+
+.foot-logo {
+    font-size: 8rem;
+}
+
+@media (max-width: 700px) {
+    .foot-logo {
+        font-size: 3.5rem;
+    }
 }
 
 .gh-foot a {

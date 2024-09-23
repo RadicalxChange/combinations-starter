@@ -6,7 +6,7 @@
 
     <header class="gh-header gh-canvas">
 
-        <div class="max-w-6xl mx-auto my-24">
+        <div class="max-w-6xl mx-auto">
             <h1 class="gh-title text-size-lg/display">{{title}}</h1>
 
             {{#if custom_excerpt}}
@@ -69,7 +69,7 @@
             <div class="gh-post-authors text-4xl uppercase mb-8">
                 By {{#foreach authors}}<a href="{{url}}">{{name}}</a>{{/foreach}}
             </div>
-            <img class="block w-full h-auto" src="{{asset "images/author-line.png"}}" />
+            <img class="block w-64 h-2" src="{{asset "images/author-line.png"}}" />
         </div>
     </header>
 
