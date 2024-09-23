@@ -60,6 +60,7 @@
     flex-wrap: wrap;
     align-items: center;
     list-style: none;
+    text-transform: uppercase;
 }
 
 .gh-head-menu .nav li {

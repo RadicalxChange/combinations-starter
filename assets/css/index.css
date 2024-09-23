@@ -235,7 +235,7 @@ html,
 
 .gh-postfeed {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(190px, 100%), 1fr));
     gap: 4.8vmin 4vmin;
     padding: 8vmin 0;
 }
@@ -245,6 +245,13 @@ html,
 }
 
 @media (min-width: 768px) {
+
+    .gh-postfeed {
+      grid-template-columns: repeat(3, 1fr);
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto; 
+    }
 
     .gh-postfeed > :first-child > * {
         display: grid;
@@ -257,7 +264,15 @@ html,
     }
     
     .gh-postfeed > *:first-child .gh-card-content .gh-card-title {
-        font-size: 9vw !important;
+        @apply text-size-xl/display;
+    }
+    
+    .gh-postfeed > .podcast-card:first-child .gh-card-content .gh-card-title {
+        font-size: 5rem;
+    }
+    
+    .gh-postfeed > *:first-child .gh-card-title, .gh-postfeed > *:first-child .gh-post-authors {
+        text-transform: uppercase;
     }
     
     .gh-postfeed > *:first-child > .gh-card-link {
@@ -274,7 +289,6 @@ html,
 
     .gh-postfeed > *:first-child .gh-card-image {
         object-fit: contain !important;
-        margin: 0 !important;
     }
 }
 
@@ -307,9 +321,13 @@ html,
 /* Index
 /* ---------------------------------------------------------- */
 
-/* .gh-card:not(:first-child) {
-    margin: 8vmin auto 0;
-} */
+.gh-card:not(:first-child) {
+    border: solid 1px black;
+}
+
+.gh-card:not(:first-child) .gh-card-content {
+  padding: 1rem;
+}
 
 .gh-card-title {
     font-family: var(--font-display);
@@ -325,7 +343,6 @@ html,
     width: 100%;
     /* max-height: 700px; */
     object-fit: cover;
-    margin-bottom: 4vmin;
     aspect-ratio: 1 / 1;
 }
 
@@ -347,7 +364,6 @@ html,
 .gh-card-content {
     max-width: 720px;
     text-align: left;
-    font-size: 1.6rem;
 }
 
 .gh-card-content p {
@@ -391,6 +407,28 @@ html,
     }
 }
 
+.team-header {
+  font-family: var(--font-display);
+  text-align: center;
+  font-size: 4rem;
+  margin-bottom: 4rem;
+  padding: 0 auto;
+  text-transform: uppercase;
+}
+
+.team-member {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: solid 1px black;
+  padding: 2.25rem 0;
+  line-height: 1;
+}
+
+.team-member > p:first-of-type {
+  font-family: var(--font-display);
+  font-size: 2rem;
+}
+
 
 /* Post
 /* ---------------------------------------------------------- */
@@ -406,10 +444,12 @@ html,
     letter-spacing: 0.5px;
     text-transform: uppercase;
     opacity: 1;
+    margin-bottom: 1.5rem;
 }
 
 .gh-excerpt {
-    margin: 1rem auto 4rem auto;
+    margin-top: 1rem;
+    margin-bottom: 4rem;
     font-size: 1.75rem;
     max-width: 500px;
 }

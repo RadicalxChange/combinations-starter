@@ -31,14 +31,13 @@
 .gh-content {
     margin-left: 2rem;
     margin-right: 2rem;
-    max-width: 650px !important;
+    max-width: 500px;
 }
 
 @media (min-width: 768px) {
     .gh-content {
         margin-left: auto;
         margin-right: auto;
-        max-width: 650px !important;
     }
 }
 

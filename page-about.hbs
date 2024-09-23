@@ -1,20 +1,22 @@
 {{!< default}}
 
 {{#post}}
-
 <article class="gh-article {{post_class}}">
+    {{#match @page.show_title_and_feature_image}}
 
     <header class="gh-header gh-canvas">
 
-        <div class="max-w-6xl mx-auto my-24">
-            <h1 class="gh-title text-size-lg/display">{{title}}</h1>
+        <div class="lg:grid lg:grid-cols-2 gap-10 text-left max-w-7xl mx-auto">
+            <div>
+                <h1 class="gh-title text-size-lg/display">{{title}}</h1>
 
-            {{#if custom_excerpt}}
-            <p class="gh-excerpt mx-auto">{{custom_excerpt}}</p>
-            {{/if}}
+                <img class="w-24 h-2 mb-12" src="{{asset "images/author-line.png"}}" />
+
+                <p class="gh-excerpt">Combinations is a publication of RadicalxChange Foundation, exploring new ideas about economics, democracy, and the relationship between technology and power. If our societies are irreversibly technological, we must steer technology itself towards the common good, rather than accept it as an instrument of self-interest.</p>
+            </div>
 
             {{#if feature_image}}
-            <figure class="gh-feature-image mt-8">
+            <figure class="gh-feature-image col-start-2 row-start-1 mt-0">
                 <picture>
                 <source 
                     srcset="
@@ -57,49 +59,58 @@
             </figure>
             {{/if}}
         </div>
-
-        <div class="my-24 py-16 border-black border-t border-b">
-            <div class="flex justify-between max-w-5xl mx-auto">
-                <span class="gh-post-meta"><time datetime="{{date format="MMMM D, YYYY"}}">{{date format="MMMM D, YYYY"}}</time> <span class="bull">&bull;</span> {{reading_time}}</span>
-                <button type="button">Share</button>
-            </div>
-        </div>
-        
-        <div class="inline-grid grid-cols-1 items-start w-auto">
-            <div class="gh-post-authors text-4xl uppercase mb-8">
-                By {{#foreach authors}}<a href="{{url}}">{{name}}</a>{{/foreach}}
-            </div>
-            <img class="block w-full h-auto" src="{{asset "images/author-line.png"}}" />
-        </div>
     </header>
+    {{/match}}
 
-    <div class="gh-content gh-canvas prose">
+    <div class="gh-content gh-canvas prose mt-24">
         {{content}}
     </div>
 
-    <footer class="gh-footer gh-canvas">
-
-        {{#if comments}}
-        <section class="gh-post-comments">
-            {{comments}}
-        </section>
-        {{/if}}
-
-    </footer>
-
-</article>
-
-<aside class="gh-readmore">
-    <div class="gh-readmore-inner gh-container">
-        <div class="gh-readmore-next">
-            {{#next_post}}<a href="{{url}}">{{> "icons/arrow-left"}} <h4>{{title}}</h4></a>{{/next_post}}
+    <div class="mt-24 max-w-7xl mx-auto">
+        <div class="team-header">
+            <h2>Team</h2>
+            <img class="w-24 h-2 mb-12 mx-auto" src="{{asset "images/author-line.png"}}" />
         </div>
-        <div class="gh-readmore-prev">
-            {{#prev_post}}<a href="{{url}}">
-                <h4>{{title}}</h4> {{> "icons/arrow-right"}}
-            </a>{{/prev_post}}
+        <div class="team-member">
+            <p>Matt Prewitt</p>
+            <p>President</p>
+        </div>
+        <div class="team-member">
+            <p>Paula Berman</p>
+            <p>Chief Operating Officer</p>
+        </div>
+        <div class="team-member">
+            <p>Guy Mackinnon-Little</p>
+            <p>Lorem Ipsum</p>
+        </div>
+        <div class="team-member">
+            <p>Jack Henderson</p>
+            <p>Research & Development</p>
+        </div>
+        <div class="team-member">
+            <p>Alex Randaccio</p>
+            <p>Technical Director</p>
+        </div>
+        <div class="team-member">
+            <p>Angela Corpus</p>
+            <p>Director of Media and Partnerships</p>
         </div>
     </div>
-</aside>
 
+    <div class="mt-24 max-w-7xl mx-auto">
+        <div class="team-header">
+            <h2>Editorial Board</h2>
+            <img class="w-24 h-2 mb-12 mx-auto" src="{{asset "images/author-line.png"}}" />
+        </div>
+        <div class="team-member">
+            <p>Nils Gilman</p>
+            <p>Lorem Ipsum</p>
+        </div>
+        <div class="team-member">
+            <p>Margaret Levi</p>
+            <p>Lorem Ipsum</p>
+        </div>
+    </div>
+
+</article>
 {{/post}}
