@@ -20,10 +20,10 @@ export default {
       "size-0": ["var(--step-0)", "1.34"],
       "size-1": ["var(--step-1)", "1.34"],
       "size-2": ["var(--step-2)", "1.34"],
-      "size-4": ["var(--step-4)", "1.14"],
+      "size-4": ["var(--step-4)", "1.34"],
       "size-display": ["clamp(50px, 7vw, 80px)", "0.98"],
       "size-lg/display": ["clamp(80px, 12vw, 110px)", "0.98"],
-      "size-xl/display": ["clamp(80px, 9vw, 90px)", "1.15"],
+      "size-xl/display": ["clamp(80px, 9vw, 125px)", "1.15"],
       "size-donate": ["clamp(56px, 3.89vw, 72px)", "0.98"],
     },
     fontFamily: {

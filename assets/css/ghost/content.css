@@ -7,6 +7,10 @@
 .kg-width-full.kg-content-wide {
 }
 
+.prose {
+    color: black !important;
+}
+
 .gh-canvas > * {
     grid-column: main-start / main-end;
 }
@@ -31,7 +35,7 @@
 .gh-content {
     margin-left: auto;
     margin-right: auto;
-    max-width: 500px;
+    max-width: 640px;
 }
 
 .gh-content > p {
@@ -61,8 +65,8 @@
 .gh-canvas > dl,
 .gh-canvas > p {
     font-weight: 400;
-    font-size: 2rem;
-    line-height: 1.6em;
+    font-size: 2.5rem;
+    line-height: 1.3em;
 }
 
 .gh-content > ul,
@@ -80,18 +84,33 @@
 }
 
 .gh-content blockquote {
+    font-family: var(--font-content);
+    font-size: 2.75rem;
     position: relative;
-    font-style: italic;
+    font-weight: 600;
+    margin: 8rem 0 8rem 8rem;
 }
 
 .gh-content blockquote::before {
     content: "";
     position: absolute;
     left: -1.5em;
-    top: 0;
-    bottom: 0;
-    width: 0.3rem;
-    background: var(--color-primary);
+    top: 8px;
+    bottom: 9px;
+    width: 6px;
+    background: linear-gradient(
+        to bottom,
+        #3D2491 0%,
+        #73379F 13%, 
+        #9675F2 22.5%, 
+        #879BF5 33%, 
+        #A52BF5 49.5%, 
+        #9F94D2 58.5%, 
+        #9EAECC 68.5%, 
+        #99EFB9 78.5%, 
+        #466997 89.5%, 
+        #1C2587 100%
+      );
 }
 
 @media (max-width: 650px) {
@@ -102,6 +121,11 @@
     .gh-canvas p {
         font-size: 1.8rem;
     }
+
+    .gh-content blockquote {
+        margin: 4rem 0 4rem 2rem;
+    }
+    
 
     .gh-content blockquote::before {
         left: -4vmin;

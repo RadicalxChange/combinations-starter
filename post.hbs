@@ -14,7 +14,7 @@
             {{/if}}
 
             {{#if feature_image}}
-            <figure class="gh-feature-image mt-8">
+            <figure class="gh-feature-image mt-8 lg:px-48">
                 <picture>
                 <source 
                     srcset="
@@ -66,14 +66,14 @@
         </div>
         
         <div class="inline-grid grid-cols-1 items-start w-auto">
-            <div class="gh-post-authors text-4xl uppercase mb-8">
+            <div class="gh-post-authors text-size-1 uppercase mb-3">
                 By {{#foreach authors}}<a href="{{url}}">{{name}}</a>{{/foreach}}
             </div>
-            <img class="block w-64 h-2" src="{{asset "images/author-line.png"}}" />
+            <div class="gradient-line-horizontal"></div>
         </div>
     </header>
 
-    <div class="gh-content gh-canvas prose">
+    <div class="gh-content gh-canvas">
         {{content}}
     </div>
 
