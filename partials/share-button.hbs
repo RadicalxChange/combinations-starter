@@ -1,0 +1,27 @@
+{{!--
+Re-usable card for social share button and modal
+--}}
+
+<button class="share-button" onclick="openShareModal()">Share</button>
+
+<div id="shareModal" class="share-modal hidden">
+    <div class="share-modal-content">
+        <header>
+            <span>Share this post</span>
+            <span class="close-button" onclick="closeShareModal()">&times;</span>
+        </header>
+        <ul class="social-share-list">
+            {{!-- facebook, linkedin post is empty --}}
+            <li><a href="https://twitter.com/share?url={{url absolute="true"}}&text={{title}}" target="_blank"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}" target="_blank"><i class="fab fa-facebook"></i></a></li> 
+            <li><a href="https://www.linkedin.com/shareArticle?mini=true&url={{url absolute="true"}}&title={{title}}&source={{@site.title}}" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+            <li><a href="mailto:?subject={{title}}&body=Check%20out%20this%20post%3A%20{{url absolute="true"}}" target="_blank"><i class="fas fa-envelope"></i></a></li>
+        </ul>
+        <p class="text-left">Or copy link</p>
+        <div class="field">
+            <i class="url-icon uil uil-link"></i>
+            <input type="text" readonly value="{{url absolute="true"}}">
+            <button>Copy</button>
+        </div>
+    </div>
+</div>
