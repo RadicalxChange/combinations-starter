@@ -30,6 +30,15 @@ export default {
       display: ["Messer", "san-serif"],
       body: ["Suisse Intl", "sans-serif"],
     },
+    colors: {
+      "frosting-cream": "#fffbed",
+      black: "#000000",
+      "light-black": "#010101",
+      white: "#FFFFFF",
+      gray: "#6C6C6C",
+      transparent: "transparent",
+      current: "currentColor",
+    },
     extend: {},
   },
   plugins: [
