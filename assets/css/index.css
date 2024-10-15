@@ -593,6 +593,11 @@ html,
     opacity: 1;
 }
 
+.bull {
+  font-size: 1.4rem;
+  font-weight: 300;
+}
+
 .gh-excerpt {
     margin-top: 1rem;
     margin-bottom: 4rem;
@@ -623,6 +628,11 @@ html,
 
 /* Social share button & modal
 /* ---------------------------------------------------------- */
+
+.share-button span {
+  font-size: 1.4rem;
+  font-weight: normal;
+}
 
 .share-modal {
   display: flex;

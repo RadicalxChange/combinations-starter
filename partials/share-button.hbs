@@ -2,7 +2,10 @@
 Re-usable card for social share button and modal
 --}}
 
-<button class="share-button" onclick="openShareModal()">Share</button>
+<button class="share-button" onclick="openShareModal()">
+    <span>Share</span>
+    <img class="inline-block w-4 ml-2" src="{{asset "images/share-arrow.png"}}" />
+</button>
 
 <div id="shareModal" class="share-modal hidden">
     <div class="share-modal-content">
