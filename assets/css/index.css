@@ -343,7 +343,6 @@ html,
 .gh-title {
     font-family: var(--font-display);
     margin-bottom: 4vmin;
-    text-transform: uppercase;
 }
 
 .gh-postfeed {
@@ -413,6 +412,7 @@ html,
     
     .gh-postfeed > .podcast-card:first-child .podcast-card-content .gh-card-title {
         font-size: 5rem;
+        text-transform: none;
     }
 
     .gh-postfeed > :first-child .gh-post-authors {
