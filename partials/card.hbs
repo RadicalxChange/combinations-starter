@@ -4,6 +4,7 @@ Re-usable card for linking to posts
 
 <article class="gh-card {{post_class}}">
     <a class="gh-card-link" href="{{url}}">
+      <div class="gh-card-image-wrapper">
         {{#if feature_image}}
             <picture class="gh-card-picture home-picture">
               <source 
@@ -47,15 +48,41 @@ Re-usable card for linking to posts
               >
             </picture>
         {{/if}}
-        <h2 class="gh-card-title">{{title}}</h2>
-        {{!-- <p>{{excerpt}}</p> --}}
-        {{!-- <span class="gh-card-meta"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time> <span class="bull">&bull;</span> {{reading_time}}</span> --}}
+      </div>
+      <h2 class="gh-card-title">{{title}}</h2>
+      {{!-- <p>{{excerpt}}</p> --}}
+      {{!-- <span class="gh-card-meta"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time> <span class="bull">&bull;</span> {{reading_time}}</span> --}}
 
-        <div class="gh-post-authors flex flex-row space-x-2 mt-4">
-            by
-            {{#foreach authors}}
-              {{name}}{{#if @last}}{{else}},{{/if}}
-            {{/foreach}}
-        </div>
+      <div class="gh-post-authors flex flex-row space-x-2 mt-4">
+          by
+          {{#foreach authors}}
+            {{name}}{{#if @last}}{{else}},{{/if}}
+          {{/foreach}}
+      </div>
     </a>
 </article>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const tags = [...document.querySelectorAll('.post-tags li')];
+    const gifTag = tags.find(tag => tag.textContent.startsWith('gif-url:'));
+
+    if (gifTag) {
+      const gifUrl = gifTag.textContent.replace('gif-url:', '').trim();
+      const gifImage = document.createElement('img');
+      gifImage.src = gifUrl;
+      gifImage.alt = 'Post GIF';
+      gifImage.className = 'gh-card-image';
+
+      const imageWrapper = document.querySelector('.gh-card-image-wrapper');
+      imageWrapper.innerHTML = ''; // Clear existing content
+      imageWrapper.appendChild(gifImage);
+    }
+  });
+</script>
+
+<ul class="post-tags" style="display: none;">
+  {{#foreach tags}}
+    <li>{{name}}</li>
+  {{/foreach}}
+</ul>
