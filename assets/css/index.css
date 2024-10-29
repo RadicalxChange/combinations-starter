@@ -357,18 +357,8 @@ html,
     grid-column: 1 / -1;
 }
     
-.gh-postfeed > *:first-child .gh-card-title {
-    text-transform: uppercase;
-    @apply text-size-display;
-    margin-top: 4rem;
-}
-    
 .gh-postfeed .gh-post-authors {
     text-transform: uppercase;
-}
-
-.gh-postfeed > *:first-child .gh-card-image {
-    /* object-fit: contain !important; */
 }
 
 @media (min-width: 768px) {
@@ -394,6 +384,7 @@ html,
     
     .gh-postfeed > *:first-child .gh-card-title {
         @apply text-size-xl/display;
+        text-transform: uppercase;
         margin-top: 0;
         grid-column-start: 1;
         grid-row-start: 1;
@@ -419,6 +410,11 @@ html,
     .gh-postfeed > :first-child .gh-post-authors {
         margin-top: 2rem;
         font-size: 1.85rem;
+    }
+
+    .gh-postfeed > *:first-child .gh-card-image-wrapper {
+        margin-top: auto;
+        margin-bottom: 2.5rem;
     }
 
     .gh-postfeed > *:first-child .gh-card-picture {
@@ -501,11 +497,11 @@ html,
 .gh-card-image {
     width: 100%;
     object-fit: cover;
-    aspect-ratio: 3 / 2;
+    aspect-ratio: 7 / 5;
 }
 
 .gh-card-image:first-of-type {
-    /* aspect-ratio: 16 / 9; */
+    aspect-ratio: 3 / 2;
 }
 
 
