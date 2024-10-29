@@ -18,3 +18,28 @@
         </noscript>
     </div>
 </div>
+
+{{!-- support gif feature images --}}
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Select all cards and process each one independently
+    const cards = document.querySelectorAll('.gh-card');
+
+    cards.forEach(card => {
+      const tags = [...card.querySelectorAll('.post-tags li')];
+      const gifTag = tags.find(tag => tag.textContent.startsWith('gif-url:'));
+
+      if (gifTag) {
+        const gifUrl = gifTag.textContent.replace('gif-url:', '').trim();
+        const gifImage = document.createElement('img');
+        gifImage.src = gifUrl;
+        gifImage.alt = 'Post GIF';
+        gifImage.className = 'gh-card-image';
+
+        const imageWrapper = card.querySelector('.gh-card-image-wrapper');
+        imageWrapper.innerHTML = ''; // Clear existing content
+        imageWrapper.appendChild(gifImage);
+      }
+    });
+  });
+</script>
