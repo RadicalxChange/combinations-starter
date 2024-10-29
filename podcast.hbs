@@ -1,20 +1,181 @@
-{{!< default}}
-<div class="gh-page">
-    <div class="gh-container">
+<!DOCTYPE html>
+<html lang="{{@site.locale}}">
+<head>
 
-        <div class="gh-postfeed">
-        {{#foreach posts}}
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{asset "built/index.css"}}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tienne:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
+    <script src="{{asset "built/index.js"}}" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const shareModal = document.getElementById("shareModal");
+            const shareButton = document.querySelector(".share-button");
+            const closeButton = shareModal.querySelector(".close-button");
+            const copyButton = shareModal.querySelector(".field button");
+            const copyInput = shareModal.querySelector(".field input");
+            const field = shareModal.querySelector(".field");
 
-            {{> "podcast-card" page=../pagination.page }} {{!-- partials/podcast-card.hbs --}}
+            // Open the share modal
+            function openShareModal() {
+                if (shareModal) {
+                    shareModal.classList.remove("hidden");
+                }
+            }
 
-        {{/foreach}}
+            // Close the share modal
+            function closeShareModal() {
+                if (shareModal) {
+                    shareModal.classList.add("hidden");
+                }
+            }
+
+            // Event listener for opening the modal
+            if (shareButton) {
+                shareButton.addEventListener("click", openShareModal);
+            }
+
+            // Event listener for closing the modal
+            if (closeButton) {
+                closeButton.addEventListener("click", closeShareModal);
+            }
+
+            // Close the modal when clicking outside of it
+            window.addEventListener("click", function(event) {
+                if (event.target === shareModal) {
+                    closeShareModal();
+                }
+            });
+
+            // Copy functionality
+            if (copyButton && copyInput) {
+                copyButton.addEventListener("click", () => {
+                    copyInput.select();
+                    if (document.execCommand("copy")) {
+                        field.classList.add("active");
+                        copyButton.innerText = "Copied";
+                        setTimeout(() => {
+                            window.getSelection().removeAllRanges();
+                            field.classList.remove("active");
+                            copyButton.innerText = "Copy";
+                        }, 3000);
+                    }
+                });
+            }
+        });
+    </script>
+
+
+    <title>{{meta_title}}</title>
+
+    {{ghost_head}}
+    {{!-- Outputs important meta data and settings, should always be in <head> --}}
+
+</head>
+<body class="{{body_class}}">
+<div class="gh-viewport">
+
+<header id="gh-head" class="gh-head">
+    <nav class="gh-head-inner gh-container">
+
+        <div class="gh-head-brand">
+            <a class="gh-head-logo" href="{{@site.url}}">
+                {{#if @site.logo}}
+                    <img src="{{@site.logo}}" alt="{{@site.title}}" />
+                {{else}}
+                    {{@site.title}}
+                {{/if}}
+            </a>
+            <a class="gh-burger" role="button" aria-label="menu">
+                <div class="gh-burger-box">
+                    <div class="gh-burger-inner"></div>
+                </div>
+            </a>
         </div>
-
-        {{!-- If JS isn't enabled, fallback to standard pagination --}}
-        <noscript>
-            <div class="gh-pagination">
-                {{pagination}}
+        <div class="gh-head-menu">
+            <div class="xl:space-x-16 xl:mr-8">
+                {{search}}
+                {{navigation}}
+                {{#if @site.members_enabled}}
+                    {{^if @member}}
+                    <a class="gh-button" href="{{@site.signup_url}}">Subscribe</a>
+                    {{else}}
+                    <a class="gh-button" href="#/portal/account">Account</a>
+                    {{/if}}
+                {{/if}}
             </div>
-        </noscript>
+            <div class="gh-head-meta">
+                <p>Published by RadicalxChange Foundation</p>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<a class="bg-black w-full text-center py-6" href="https://radicalxchange-s.simplecast.com/" target="_blank" rel="noopener noreferrer">
+    <div class="grid grid-cols-2 px-10 py-4">
+        <span class="font-display text-size-display text-frosting-cream text-left">RadicalxChange(s)</span>
+        <span class="font-body text-size-1 text-frosting-cream text-left">RadicalxChange Foundation's Matt Prewitt Speaks With Inspiring Personalities To Explore Critical Ideas And Stories About Next-Generation Political Economies.</span>
     </div>
+</a>
+
+<main class="gh-main">
+    <div class="gh-page">
+        <div class="gh-container">
+
+            <div class="gh-postfeed">
+            {{#foreach posts}}
+
+                {{> "podcast-card" page=../pagination.page }} {{!-- partials/podcast-card.hbs --}}
+
+            {{/foreach}}
+            </div>
+
+            {{!-- If JS isn't enabled, fallback to standard pagination --}}
+            <noscript>
+                <div class="gh-pagination">
+                    {{pagination}}
+                </div>
+            </noscript>
+        </div>
+    </div>
+</main>
+
+<footer class="gh-foot">
+    <div class="gh-container">
+        <div class="gh-foot-menu">
+            <a class="gh-head-logo foot-logo" href="{{@site.url}}">
+                {{#if @site.logo}}
+                    <img src="{{@site.logo}}" alt="{{@site.title}}" />
+                {{else}}
+                    {{@site.title}}
+                {{/if}}
+            </a>
+        </div>
+        <div class="gh-head-menu">
+            <div class="xl:space-x-16 xl:mr-8">
+                {{navigation}}
+            </div>
+        </div>
+    </div>
+    <div class="col-span-columns mt-8">
+      <p class="text-center">
+        All rights reserved ©
+      </p>
+    </div>
+</footer>
+
 </div>
+
+{{!-- <foot> --}}
+{{ghost_foot}}
+{{!-- Outputs important scripts - should always be included before closing body tag --}}
+
+</body>
+</html>
