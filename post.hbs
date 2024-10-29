@@ -122,6 +122,63 @@
     }
   });
 </script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const shareModal = document.getElementById("shareModal");
+        const shareButton = document.querySelector(".share-button");
+        const closeButton = shareModal ? shareModal.querySelector(".close-button") : null;
+        const copyButton = shareModal ? shareModal.querySelector(".field button") : null;
+        const copyInput = shareModal ? shareModal.querySelector(".field input") : null;
+        const field = shareModal ? shareModal.querySelector(".field") : null;
+
+        // Open the share modal
+        function openShareModal() {
+            if (shareModal) {
+                shareModal.classList.remove("hidden");
+            }
+        }
+
+        // Close the share modal
+        function closeShareModal() {
+            if (shareModal) {
+                shareModal.classList.add("hidden");
+            }
+        }
+
+        // Event listener for opening the modal
+        if (shareButton) {
+            shareButton.addEventListener("click", openShareModal);
+        }
+
+        // Event listener for closing the modal
+        if (closeButton) {
+            closeButton.addEventListener("click", closeShareModal);
+        }
+
+        // Close the modal when clicking outside of it
+        window.addEventListener("click", function(event) {
+            if (event.target === shareModal) {
+                closeShareModal();
+            }
+        });
+
+        // Copy functionality
+        if (copyButton && copyInput) {
+            copyButton.addEventListener("click", () => {
+                copyInput.select();
+                if (document.execCommand("copy")) {
+                    field.classList.add("active");
+                    copyButton.innerText = "Copied";
+                    setTimeout(() => {
+                        window.getSelection().removeAllRanges();
+                        field.classList.remove("active");
+                        copyButton.innerText = "Copy";
+                    }, 3000);
+                }
+            });
+        }
+    });
+</script>
 
 <ul class="post-tags" style="display: none;">
   {{#foreach tags}}

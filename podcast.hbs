@@ -14,64 +14,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
     <script src="{{asset "built/index.js"}}" defer></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const shareModal = document.getElementById("shareModal");
-            const shareButton = document.querySelector(".share-button");
-            const closeButton = shareModal.querySelector(".close-button");
-            const copyButton = shareModal.querySelector(".field button");
-            const copyInput = shareModal.querySelector(".field input");
-            const field = shareModal.querySelector(".field");
-
-            // Open the share modal
-            function openShareModal() {
-                if (shareModal) {
-                    shareModal.classList.remove("hidden");
-                }
-            }
-
-            // Close the share modal
-            function closeShareModal() {
-                if (shareModal) {
-                    shareModal.classList.add("hidden");
-                }
-            }
-
-            // Event listener for opening the modal
-            if (shareButton) {
-                shareButton.addEventListener("click", openShareModal);
-            }
-
-            // Event listener for closing the modal
-            if (closeButton) {
-                closeButton.addEventListener("click", closeShareModal);
-            }
-
-            // Close the modal when clicking outside of it
-            window.addEventListener("click", function(event) {
-                if (event.target === shareModal) {
-                    closeShareModal();
-                }
-            });
-
-            // Copy functionality
-            if (copyButton && copyInput) {
-                copyButton.addEventListener("click", () => {
-                    copyInput.select();
-                    if (document.execCommand("copy")) {
-                        field.classList.add("active");
-                        copyButton.innerText = "Copied";
-                        setTimeout(() => {
-                            window.getSelection().removeAllRanges();
-                            field.classList.remove("active");
-                            copyButton.innerText = "Copy";
-                        }, 3000);
-                    }
-                });
-            }
-        });
-    </script>
-
 
     <title>{{meta_title}}</title>
 
