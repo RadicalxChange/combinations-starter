@@ -324,7 +324,7 @@ html,
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background: #fffbed;
+    background: #fff9e3;
 }
 
 .gh-main {
@@ -339,6 +339,10 @@ html,
 
 .gh-article {
     padding: 8vmin 3vmin;
+}
+
+.post-header {
+  max-width: 900px;
 }
 
 .gh-title {
@@ -372,7 +376,6 @@ html,
 
     .gh-postfeed > *:first-child {
         margin-bottom: 8rem;
-        max-width: 1000px;
         margin-left: auto;
         margin-right: auto;
     }
@@ -380,20 +383,17 @@ html,
     .gh-postfeed > :first-child > * {
         display: grid;
         grid-template-columns: 1fr 1fr;
+        column-gap: 8rem;
     }
-    
+
     .gh-postfeed > *:first-child .gh-card-title {
-        @apply text-size-xl/display;
+        @apply text-size-lg/display; 
         text-transform: uppercase;
         margin-top: 0;
-        grid-column-start: 1;
-        grid-row-start: 1;
         padding: 0;
     }
     
     .gh-postfeed > *:first-child .gh-post-authors {
-        grid-column-start: 1;
-        grid-row-start: 2;
         padding: 0;
     }
     
@@ -408,13 +408,13 @@ html,
     }
 
     .gh-postfeed > :first-child .gh-post-authors {
-        margin-top: 2rem;
+        margin-top: 4rem;
         font-size: 1.85rem;
     }
 
     .gh-postfeed > *:first-child .gh-card-image-wrapper {
-        margin-top: auto;
-        margin-bottom: 2.5rem;
+        grid-column-start: 2;
+        margin: auto 0 auto 0;
     }
 
     .gh-postfeed > *:first-child .gh-card-picture {
@@ -431,6 +431,14 @@ html,
         width: auto;
         object-fit: contain;
     }
+}
+
+@media (min-width: 1300px) {
+
+  .gh-postfeed > *:first-child {
+    margin-left: -50px;
+    margin-right: -50px;
+  }
 }
 
 .gradient-line-horizontal {
