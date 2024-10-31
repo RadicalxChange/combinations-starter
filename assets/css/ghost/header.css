@@ -39,6 +39,7 @@
     padding: 10px 0;
     font-family: var(--font-display);
     text-transform: uppercase;
+    white-space: nowrap;
 }
 
 .gh-head-logo img {
