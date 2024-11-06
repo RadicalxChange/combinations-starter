@@ -85,5 +85,8 @@
             }
         }
     },
-    "type": "module"
+    "type": "module",
+    "dependencies": {
+        "stripe": "^17.3.1"
+    }
 }
