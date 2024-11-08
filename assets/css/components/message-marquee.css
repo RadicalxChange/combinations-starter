@@ -4,6 +4,13 @@
   overflow: hidden;
   --move-initial: -25%;
   --move-final: -50%;
+  border-width: 5px;
+  border-style: solid;
+  border-image-source: url("/assets/images/fancy-border.png");
+  border-image-slice: 10;
+  border-image-width: 5px; /* Match border-width or adjust for effect */
+  border-image-repeat: round; /* Options: stretch, repeat, or round */
+  margin: 0 3vmin;
 }
 
 .message-marquee .marquee__inner {
@@ -12,7 +19,8 @@
   width: fit-content;
   transform: translate3d(var(--move-initial), 0, 0);
   animation: message-marquee 40s linear infinite;
-  @apply font-display uppercase text-size-2 text-frosting-cream;
+  @apply font-display uppercase text-size-2;
+  padding: 1.5rem;
 }
 
 @media (min-width: 768px) {
