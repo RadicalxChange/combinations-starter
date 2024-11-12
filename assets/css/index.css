@@ -561,23 +561,24 @@ html,
 .team-header {
   font-family: var(--font-display);
   text-align: center;
-  font-size: 4rem;
+  font-size: 8rem;
   margin-bottom: 4rem;
   padding: 0 auto;
   text-transform: uppercase;
 }
 
-.team-member {
-  display: flex;
-  justify-content: space-between;
-  border-bottom: solid 1px black;
-  padding: 2.25rem 0;
-  line-height: 1;
+.team > p {
+  font-family: var(--font-content);
+  font-weight: 600;
+  font-size: 1.8rem;
 }
 
-.team-member > p:first-of-type {
-  font-family: var(--font-display);
-  font-size: 2rem;
+.board {
+  font-family: var(--font-content);
+  font-weight: 600;
+  font-size: 1.8rem;
+  text-align: center;
+  margin: 6rem auto 0 auto;
 }
 
 
