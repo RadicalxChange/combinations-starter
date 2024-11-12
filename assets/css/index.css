@@ -396,16 +396,6 @@ html,
     .gh-postfeed > *:first-child .gh-post-authors {
         padding: 0;
     }
-    
-    .gh-postfeed > .podcast-card:first-child .podcast-card-content {
-        grid-column-start: 1;
-        grid-row-start: 1;
-    }
-    
-    .gh-postfeed > .podcast-card:first-child .podcast-card-content .gh-card-title {
-        font-size: 5rem;
-        text-transform: none;
-    }
 
     .gh-postfeed > :first-child .gh-post-authors {
         margin-top: 4rem;
@@ -523,12 +513,6 @@ html,
     opacity: 0.8;
 }
 
-.podcast-card-content {
-    max-width: 720px;
-    text-align: left;
-    padding: 1rem 0;
-}
-
 
 /* Page
 /* ---------------------------------------------------------- */
@@ -622,13 +606,6 @@ html,
 
 .gh-post-footer {
     margin: 2rem 0;
-}
-
-.podcast-content h2 {
-  font-family: var(--font-display);
-  font-weight: normal;
-  text-transform: uppercase;
-  font-size: 4em;
 }
 
 
