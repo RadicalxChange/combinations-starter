@@ -324,7 +324,7 @@ html,
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background: #fff9e3;
+    background: #fff9e5;
 }
 
 .gh-main {
@@ -363,6 +363,8 @@ html,
     
 .gh-postfeed .gh-post-authors {
     text-transform: uppercase;
+    font-size: 1.4rem;
+    margin-top: 1rem;
 }
 
 @media (min-width: 768px) {
@@ -383,7 +385,6 @@ html,
     .gh-postfeed > :first-child > * {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        column-gap: 8rem;
     }
 
     .gh-postfeed > *:first-child .gh-card-title {
@@ -404,7 +405,7 @@ html,
 
     .gh-postfeed > *:first-child .gh-card-image-wrapper {
         grid-column-start: 2;
-        margin: auto 0 auto 0;
+        margin: 2rem 0 auto 0;
     }
 
     .gh-postfeed > *:first-child .gh-card-picture {
@@ -426,8 +427,8 @@ html,
 @media (min-width: 1300px) {
 
   .gh-postfeed > *:first-child {
-    margin-left: -50px;
-    margin-right: -50px;
+    margin-left: 80px;
+    margin-right: 80px;
   }
 }
 
@@ -669,8 +670,8 @@ html,
   border-bottom: 1px solid #ebedf9;
 }
 header span{
-  font-size: 21px;
-  font-weight: 600;
+  font-size: 1.5rem;
+  font-weight: normal;
 }
 header .close-button, .social-share-list a{
   display: flex;
