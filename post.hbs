@@ -13,7 +13,7 @@
             <p class="gh-excerpt mx-auto">{{custom_excerpt}}</p>
             {{/if}}
 
-            <div class="gh-feature-image-wrapper my-32">
+            <div class="gh-feature-image-wrapper mt-32">
                 {{#if feature_image}}
                 <figure class="gh-feature-image mt-8 lg:px-48">
                     <picture>
@@ -52,15 +52,15 @@
                         alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
                     >
                     </picture>
-                    {{#if feature_image_caption}}
-                        <figcaption>{{feature_image_caption}}</figcaption>
-                    {{/if}}
                 </figure>
                 {{/if}}
             </div>
+            {{#if feature_image_caption}}
+                <figcaption>{{feature_image_caption}}</figcaption>
+            {{/if}}
         </div>
 
-        <div class="my-24 py-16 border-black border-t border-b">
+        <div class="mt-32 mb-24 py-16 border-black border-t border-b">
             <div class="flex justify-between max-w-5xl mx-auto">
                 <span class="gh-post-meta"><time datetime="{{date format="MMMM D, YYYY"}}">{{date format="MMMM D, YYYY"}}</time> <span class="bull">&bull;</span> {{reading_time}}</span>
                 {{> "share-button"}}
